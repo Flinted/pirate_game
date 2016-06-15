@@ -8,17 +8,18 @@ class Ship
     @afloat = true
   end
 
-  def shoot(roll, range)
-     return "HIT!" if roll == range 
-     return "MISS!" if roll != range  
+  def shoot(choice, range)
+     take_damage() if choice == range 
+      
   end  
 
-  def take_damage(hit_state)
-   @holes += 1 if hit_state == "HIT!"
+  def take_damage()
+   @holes += 1
   end
 
   def check_ship_sunk()
-    @afloat =false if @holes >= 5  
+    @afloat = false if @holes >= 5  
+    return @afloat
   end
 
   def repair

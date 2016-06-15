@@ -1,12 +1,12 @@
 class Sea
 
-attr_reader(:players, :range)
+attr_reader(:players, :range, :possible_ranges)
 
   def initialize(players)
 
   @players = players
   @range = 2
-  @possible_ranges = [:alongside, :close, :mid, :far, :extreme]
+  @possible_ranges = ["fire alongside", "fire close", "fire mid", "fire long", "fire extreme"]
 
   end
 
@@ -28,15 +28,15 @@ attr_reader(:players, :range)
     @players.rotate![0]
   end
 
-  def check_first_moves( player1, player2, player1_move , player2_move)
-      player1.move(player1_move) if player1_move == :retreat || :approach
-      player2.move(player2_move) if player2_move == :retreat || :approach
+  def check_moves( player1, player2, player1_move , player2_move)
+      move(player1_move) if player1_move == :retreat || :approach
+      move(player2_move) if player2_move == :retreat || :approach
 
       player1.ship.repair if player1_move == :repair
       player2.ship.repair if player2_move == :repair
       
-      
-
+      player2.ship.shoot(player1_move,@possible_ranges[@range]) if player1_move != :retreat || :approach || :repair
+      player1.ship.shoot(player2_move,@possible_ranges[@range]) if player2_move != :retreat || :approach || :repair
   end
 
 

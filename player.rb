@@ -19,15 +19,15 @@ class Player
     when 2
       return :retreat
     when 3
-      return :alongside
+      return "fire alongside"
     when 4
-      return :close
+      return "fire close"
     when 5
-      return :mid
+      return "fire mid"
     when 6
-      return :far
+      return "fire long"
     when 7
-      return :extreme
+      return "fire extreme"
     else
       return :repair
     end
