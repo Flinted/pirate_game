@@ -37,7 +37,7 @@ attr_reader(:win)
 
       first_player= @sea.players[0]
       
-      @viewer.menu( first_player.name, @sea.check_range )
+      @viewer.menu( first_player, @sea.check_range )
 
       first_player_first_action = @player1.choose(gets.chomp.to_i)
 
@@ -52,7 +52,7 @@ attr_reader(:win)
 
       @viewer.game_name
       second_player= @sea.players[0]
-      @viewer.menu( second_player.name, @sea.check_range )
+      @viewer.menu( second_player, @sea.check_range )
 
       second_player_first_action = @player2.choose(gets.chomp.to_i)
       puts

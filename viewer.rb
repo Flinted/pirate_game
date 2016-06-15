@@ -1,10 +1,10 @@
 class Viewer
 
-  def menu(player_name, current_range)
+  def menu(player, current_range)
     
     puts <<-menu
 
-      Captain  #{player_name}!
+      Captain  #{player.name}!
 
       Your ships are in range to #{current_range.to_s} range!
 
@@ -15,9 +15,9 @@ class Viewer
       4: Fire cannons: close range
       5: Fire cannons: mid range
       6: Fire cannons: long range
-      7: Fire cannons: extreme range
+      7: Fire cannons: extreme range 
 
-      8: Repair ship!
+      8: Repair ship! #{2 - player.ship.repair_count} repairs remaining
 
       Choose your first action (of 2):
     menu
@@ -34,7 +34,7 @@ class Viewer
   def move_info(range, first_player, second_player, first_player_move, second_player_move)
     puts
     puts
-    puts "After moving you are in range #{range} range.  "
+    puts "After moving you are in range to #{range} range.  "
     puts
     puts "Captain  #{first_player.name} chose to #{first_player_move}."
     puts
@@ -49,9 +49,9 @@ class Viewer
   end
 
   def holes_at_end(first_player,second_player)
-    puts "#{first_player.name}'s ship, the #{first_player.ship.name} has #{first_player.ship.holes} holes out of a possible 5 before sinking..."
+    puts "#{first_player.name}'s ship, the #{first_player.ship.name} has #{first_player.ship.holes} holes out of a possible 3 before sinking..."
     puts
-    puts"#{second_player.name}'s ship, the #{second_player.ship.name} has #{second_player.ship.holes} holes out of a possible 5 before sinking..."
+    puts"#{second_player.name}'s ship, the #{second_player.ship.name} has #{second_player.ship.holes} holes out of a possible 3 before sinking..."
   end
 
   def get_player_name(player_number)
