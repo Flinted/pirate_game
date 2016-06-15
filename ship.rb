@@ -10,7 +10,6 @@ class Ship
 
   def shoot(choice, range)
      take_damage() if choice == range 
-      
   end  
 
   def take_damage()
