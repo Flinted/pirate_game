@@ -32,6 +32,7 @@ attr_reader(:win)
 
     while @win == nil
       system('clear')
+      @viewer.game_name
       first_player= @sea.players[0]
       @viewer.menu( first_player.name, @sea.check_range )
       first_player_first_action = @player1.choose(gets.chomp.to_i)
@@ -41,7 +42,8 @@ attr_reader(:win)
 
       system('clear')
       @sea.change_player
-     
+      
+      @viewer.game_name
       second_player= @sea.players[0]
       @viewer.menu( second_player.name, @sea.check_range )
       second_player_first_action = @player2.choose(gets.chomp.to_i)
