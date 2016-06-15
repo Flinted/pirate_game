@@ -1,6 +1,6 @@
 class Ship
 
-  attr_reader(:name, :true, :holes, :afloat)
+  attr_reader(:name, :holes, :afloat)
 
   def initialize(name)
     @name = name
