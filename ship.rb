@@ -20,5 +20,9 @@ class Ship
   def check_ship_sunk()
     @afloat =false if @holes >= 5  
   end
+
+  def repair
+    @holes -= 1 if @holes > 0
+  end
   
 end
