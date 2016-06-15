@@ -26,11 +26,11 @@ class TestPlayer < MiniTest::Test
   end
 
   def test_player_choose_alongside
-    assert_eaual(:alongside ,player.choose(3))
+    assert_equal(:alongside ,@player1.choose(3))
   end
 
 
   def test_player_choose_nothing
-    assert_eaual(:alongside ,player.choose(nil))
+    assert_equal(:repair ,@player1.choose(nil))
   end
 end

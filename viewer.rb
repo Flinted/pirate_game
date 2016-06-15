@@ -1,7 +1,10 @@
 class Viewer
 
-  def menu(current_range)
+  def menu(player_name, current_range)
+    
     puts <<-menu
+      Captain  #{player_name}!
+
       Your ships are at #{current_range} range!
 
       1: Close the distance!
@@ -36,12 +39,11 @@ class Viewer
     return gets.chomp
   end
 
-  def turn(player_name)
-    menu("mid")
+  def turn(player_name, current_range)
+    menu(player_name, current_range)
     first_action = gets.chomp
     second_action()
     second_action = gets.chomp
-    system('clear')
   end
 
   viewer =Viewer.new()
