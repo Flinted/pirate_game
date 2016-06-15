@@ -24,4 +24,13 @@ class TestPlayer < MiniTest::Test
     @player1.add_win
     assert_equal(1, @player1.wins)
   end
+
+  def test_player_choose_alongside
+    assert_eaual(:alongside ,player.choose(3))
+  end
+
+
+  def test_player_choose_nothing
+    assert_eaual(:alongside ,player.choose(nil))
+  end
 end
